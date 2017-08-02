@@ -10,7 +10,7 @@ __device__ int l(int a, int b){
 
 template<int N>
 __global__ void multiply(double *A, double *B, double *C){
-// C[i][k] = \sum_{j} A[i][j] + B[j][k]
+// C[i][k] = \sum_{j} A[i][j] * B[j][k]
 	int i = blockIdx.y*blockDim.y+threadIdx.y;
 	int k = blockIdx.x*blockDim.x+threadIdx.x;
 	if(i<N && k<N){

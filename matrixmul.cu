@@ -64,9 +64,9 @@ int main(void){
 	random(B, N*N);
 
 	std::cout << "A=" << std::endl;
-	//dispMat<N>(A);
+	dispMat<N>(A);
 	std::cout << "B=" << std::endl;
-	//dispMat<N>(B);
+	dispMat<N>(B);
 
 	cudaMalloc((void**)&d_A, memsize);
 	checkError();
@@ -90,7 +90,7 @@ int main(void){
 	checkError();
 
 	std::cout << "C=" << C[10*N+10] << std::endl;
-	//dispMat<N>(C);
+	dispMat<N>(C);
 
 	cudaFree(d_A);
 	cudaFree(d_B);
